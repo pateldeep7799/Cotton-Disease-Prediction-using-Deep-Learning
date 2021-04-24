@@ -29,7 +29,7 @@ from werkzeug.utils import secure_filename
 app = Flask(__name__)
 
 # Model saved with Keras model.save()
-MODEL_PATH = r'C:\Users\HP\Desktop\cotton_diseases\cotton_model_resnet50.h5'
+MODEL_PATH = 'cotton_model_resnet50.h5'
 
 # Load your trained model
 model = load_model(MODEL_PATH)
@@ -84,7 +84,7 @@ def upload():
         # Save the file to ./uploads
         basepath = os.path.dirname(__file__)
         file_path = os.path.join(
-            basepath, r'C:\Users\HP\Desktop\cotton_diseases\uploads', secure_filename(f.filename))
+            basepath,'uploads', secure_filename(f.filename))
         f.save(file_path)
 
         # Make prediction
